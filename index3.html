@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('./images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/cloud.gif" id="img"/>
+    <script>
+        var elem=document.querySelector('#img');
+        var animate=elem.animate([
+            {transform: 'translate(0,0)'},
+            {transform: 'translate(400px,80px)'},
+            {transform: 'translate(800px,0)'},
+            {transform: 'translate(400px,80px)'},
+            {transform: 'translate(0,0)'},
+        ],{
+            duration:4000,
+            iterations: Infinity
+        })
+        document.addEventListener("mousedown",()=>{
+            animate.pause();
+        })
+        document.addEventListener("mouseup",()=>{
+            animate.play();
+        })
+    </script>
+</body>
+</html> 
